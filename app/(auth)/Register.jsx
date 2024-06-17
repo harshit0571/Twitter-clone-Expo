@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { auth } from "../../firebaseConfig";
-import { router } from "expo-router";
+import { Link, router } from "expo-router";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -13,7 +13,7 @@ const Register = () => {
   const handleRegister = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password).then(
-        (data) => {
+        () => {
           router.push("/Login");
         }
       );
@@ -56,6 +56,7 @@ const Register = () => {
           Sign Up
         </Text>
       </TouchableOpacity>
+      <Link href={'/Login'} className="mt-3"><Text className="mt-3 text-blue-600">Already have an account? Login</Text></Link>
     </View>
   );
 };

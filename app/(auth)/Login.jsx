@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { auth } from "../../firebaseConfig";
-import { router } from "expo-router"; // Assuming this handles navigation
+import { Link, router } from "expo-router"; // Assuming this handles navigation
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
@@ -11,8 +11,10 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password)
-      router.push("/Register"); // Example redirection
+      await signInWithEmailAndPassword(auth, email, password).then(()=>{
+        router.push("/Home"); 
+      })
+   
     } catch (error) {
       setError(error.message);
     }
@@ -51,6 +53,7 @@ const Login = () => {
           Login
         </Text>
       </TouchableOpacity>
+      <Link href={'/Register'} className="mt-3"><Text className="mt-3 text-blue-600">Dont have an account? Register</Text></Link>
     </View>
   );
 };
