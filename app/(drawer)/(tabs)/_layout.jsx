@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
-import { Drawer } from "expo-router/drawer";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const _layout = () => {
   return (
@@ -29,7 +29,11 @@ const _layout = () => {
                     (focused && "text-white font-semibold") + " text-white"
                   }
                 >
-                  Home{" "}
+                  <Icon
+                    name="home"
+                    size={30}
+                    color={focused ? "#7D5BC5" : "#B4B4B4"}
+                  />
                 </Text>
               </View>
             ),
@@ -49,7 +53,12 @@ const _layout = () => {
                     (focused && "text-white font-semibold") + " text-white"
                   }
                 >
-                  Profile
+                  <Icon
+                    name="user"
+                    size={30}
+                    color={focused ? "#7D5BC5" : "#B4B4B4"}
+                    className="text-indigo-500"
+                  />
                 </Text>
               </View>
             ),

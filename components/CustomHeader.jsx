@@ -1,8 +1,9 @@
 import React from "react";
-import { Text, Image, View, SafeAreaView } from "react-native";
+import { Text, Image, View, SafeAreaView, Platform } from "react-native";
 import { Pressable } from "react-native";
 import { styled } from "nativewind";
-import { Navigator, useNavigation } from "expo-router";
+import { useNavigation } from "expo-router";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const CustomHeader = ({ title }) => {
   const StyledView = styled(SafeAreaView);
@@ -11,7 +12,7 @@ const CustomHeader = ({ title }) => {
   const StyledImageContainer = styled(View);
   const navigation = useNavigation();
   return (
-    <StyledView className="bg-black flex-row justify-between items-baseline py-8 px-4">
+    <StyledView className={"bg-black flex-row justify-between items-center px-4 "+(Platform.OS==="android" && "pt-9 pb-2")}>
       <StyledPressable
         className="bg-red-500 p-4 rounded-full py-3"
         onPress={() => {
@@ -28,9 +29,9 @@ const CustomHeader = ({ title }) => {
         className="h-10 w-10"
       />
 
-      <StyledPressable className="bg-gray-500 p-5 rounded-full py-3">
-        <StyledText className="text-white"></StyledText>
-      </StyledPressable>
+      <StyledText className="text-white">
+        <Icon name="gear" size={30} color="#B4B4B4" />
+      </StyledText>
     </StyledView>
   );
 };
