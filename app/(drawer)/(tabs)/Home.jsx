@@ -1,13 +1,19 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import Following from "../../../components/Home/Following";
+import ForYou from "../../../components/Home/ForYou";
 
-const Home = () => {
+const Tab = createMaterialTopTabNavigator();
+
+export default function MyTabs() {
   return (
-    <SafeAreaView>
-      <Text className="text-red-500">Home</Text>
-    </SafeAreaView>
-  )
+    <Tab.Navigator screenOptions={{
+      tabBarActiveTintColor:"white",
+      tabBarStyle:{backgroundColor:"black", paddingBottom:10, borderBottomLeftRadius:20, borderBottomRightRadius:20},
+      tabBarPressColor:"gray",
+      
+    }}>
+      <Tab.Screen name="Following" component={Following} />
+      <Tab.Screen name="For You" component={ForYou} />
+    </Tab.Navigator>
+  );
 }
-
-export default Home
