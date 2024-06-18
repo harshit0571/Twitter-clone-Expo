@@ -28,8 +28,8 @@ const CustomHeader = ({ title }) => {
         className="h-10 w-10"
       />
 
-      <StyledPressable className="bg-red-500 p-4 rounded-full py-3">
-        <StyledText className="text-white">H</StyledText>
+      <StyledPressable className="bg-gray-500 p-5 rounded-full py-3">
+        <StyledText className="text-white"></StyledText>
       </StyledPressable>
     </StyledView>
   );
