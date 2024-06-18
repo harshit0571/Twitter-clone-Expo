@@ -1,18 +1,37 @@
-import { View, Text, Image } from "react-native";
 import React from "react";
+import { Text, Image, View, SafeAreaView } from "react-native";
+import { Pressable } from "react-native";
+import { styled } from "nativewind";
+import { Navigator, useNavigation } from "expo-router";
 
 const CustomHeader = ({ title }) => {
+  const StyledView = styled(SafeAreaView);
+  const StyledText = styled(Text);
+  const StyledPressable = styled(Pressable);
+  const StyledImageContainer = styled(View);
+  const navigation = useNavigation();
   return (
-    <View className="bg-black flex justify-center">
+    <StyledView className="bg-black flex-row justify-between items-baseline py-8 px-4">
+      <StyledPressable
+        className="bg-red-500 p-4 rounded-full py-3"
+        onPress={() => {
+          navigation.openDrawer();
+        }}
+      >
+        <StyledText className="text-white">H</StyledText>
+      </StyledPressable>
+
       <Image
         source={{
-          uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/1200px-X_logo.jpg",
+          uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKlTNRaX-J4l3Uj-RbSU5vvsZtpioufqc9yw&s",
         }}
-        style={{width:30, height:30}}
-        className="h-[100px] w-[100px]"
+        className="h-10 w-10"
       />
 
-    </View>
+      <StyledPressable className="bg-red-500 p-4 rounded-full py-3">
+        <StyledText className="text-white">H</StyledText>
+      </StyledPressable>
+    </StyledView>
   );
 };
 

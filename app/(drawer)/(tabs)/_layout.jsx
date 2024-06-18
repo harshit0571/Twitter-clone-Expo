@@ -1,14 +1,11 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
-import CustomHeader from "../../components/CustomHeader";
-import { StatusBar } from "expo-status-bar";
+import { Drawer } from "expo-router/drawer";
 
 const _layout = () => {
   return (
     <>
-      <StatusBar style="dark" backgroundColor="#586776" />
-
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: "#FFA001",
@@ -36,11 +33,10 @@ const _layout = () => {
                 </Text>
               </View>
             ),
-            headerShown: true,
+            headerShown: false,
             headerStyle: {
               backgroundColor: "#000000",
             },
-            headerTitle: ({}) => <CustomHeader title={"Home"} />,
           }}
         />
         <Tabs.Screen
@@ -57,11 +53,10 @@ const _layout = () => {
                 </Text>
               </View>
             ),
-            headerTitle: ({}) => <CustomHeader title={"Home"} />,
             headerStyle: {
               backgroundColor: "#000000",
             },
-            headerShown: true,
+            headerShown: false,
           }}
         />
       </Tabs>
