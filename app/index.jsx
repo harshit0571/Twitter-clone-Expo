@@ -9,7 +9,7 @@ const Index = () => {
   useEffect(() => {
     console.log(user);
   }, [user]);
-  if (1>2) {
+  if (user) {
     return <Redirect href="/Login" />;
   }
   return <Redirect href="/Home" />;
