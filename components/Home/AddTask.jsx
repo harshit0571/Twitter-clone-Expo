@@ -12,28 +12,11 @@ import { useAuthContext } from "../../context/AuthProvider";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 import { generateRandomId } from "../../constants/utils";
+import { useTweetContext } from "../../context/TweetProvider";
 
 const AddTask = ({ isVisible, setIsVisible }) => {
   const [task, setTask] = useState("");
-  const { user } = useAuthContext();
-  const handleTweet = async () => {
-    console.log("Tweet button pressehd");
-    if (user) {
-      const tid = generateRandomId();
-      const tweetRef = doc(db, "tweets", tid);
-      await setDoc(tweetRef, {
-        tid: tid,
-        tweet: task,
-        uid: user.uid,
-        date: new Date().toISOString(),
-      });
-      setTask("");
-      setIsVisible(false);
-    } else {
-      console.log("user not logged in");
-    }
-  };
-
+  const { handleTweet } = useTweetContext();
   const handleClose = () => {
     setIsVisible(false);
   };
@@ -59,7 +42,9 @@ const AddTask = ({ isVisible, setIsVisible }) => {
         />
         <TouchableOpacity
           className="flex-row items-center bg-blue-500 p-3 justify-center rounded-full"
-          onPress={handleTweet}
+          onPress={() => {
+            handleTweet(task, setTask, setIsVisible);
+          }}
         >
           <Ionicons name="logo-twitter" size={24} color="white" />
           <Text className="text-white text-lg ml-2">Tweet</Text>
