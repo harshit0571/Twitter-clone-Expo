@@ -43,7 +43,7 @@ const _layout = () => {
           }}
         />
         <Tabs.Screen
-          name="Profile"
+          name="Profile/[UserID]"
           options={{
             tabBarIcon: ({ color, focused }) => (
               <View>
