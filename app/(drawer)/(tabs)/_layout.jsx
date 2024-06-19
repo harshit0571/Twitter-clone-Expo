@@ -1,11 +1,10 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const _layout = () => {
   return (
-    <>
       <Tabs
         screenOptions={{
           tabBarActiveTintColor: "#FFA001",
@@ -20,7 +19,7 @@ const _layout = () => {
         }}
       >
         <Tabs.Screen
-          name="Home"
+          name="(Home)"
           options={{
             tabBarIcon: ({ color, focused }) => (
               <View>
@@ -32,7 +31,7 @@ const _layout = () => {
                   <Icon
                     name="home"
                     size={30}
-                    color={focused ? "#7D5BC5" : "#B4B4B4"}
+                    color={focused ? "#307AFF" : "#B4B4B4"}
                   />
                 </Text>
               </View>
@@ -56,7 +55,7 @@ const _layout = () => {
                   <Icon
                     name="user"
                     size={30}
-                    color={focused ? "#7D5BC5" : "#B4B4B4"}
+                    color={focused ? "#307AFF" : "#B4B4B4"}
                     className="text-indigo-500"
                   />
                 </Text>
@@ -69,7 +68,6 @@ const _layout = () => {
           }}
         />
       </Tabs>
-    </>
   );
 };
 

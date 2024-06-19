@@ -18,7 +18,7 @@ const CustomDrawer = () => {
         <Text className="text-white font-semibold text-lg">Harshit Chadha</Text>
       </View>
       <View className="flex flex-col p-7 gap-2 justify-center">
-        <Link href={"Home"} className="text-gray-200 font-semibold text-2xl">
+        <Link href={"Register"} className="text-gray-200 font-semibold text-2xl">
           <Text>Home</Text>
         </Link>
         <Link href={"Home"} className="text-gray-200 font-semibold text-2xl">

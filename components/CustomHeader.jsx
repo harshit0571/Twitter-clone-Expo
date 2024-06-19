@@ -12,7 +12,7 @@ const CustomHeader = ({ title }) => {
   const StyledImageContainer = styled(View);
   const navigation = useNavigation();
   return (
-    <StyledView className={"bg-black flex-row justify-between items-center px-4 "+(Platform.OS==="android" && "pt-9 pb-2")}>
+    <StyledView className={"bg-black flex-row justify-between items-center px-4 "+(Platform.OS==="android" ? "pt-9 pb-2":"py-4")}>
       <StyledPressable
         className="bg-red-500 p-4 rounded-full py-3"
         onPress={() => {
@@ -27,6 +27,7 @@ const CustomHeader = ({ title }) => {
           uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKlTNRaX-J4l3Uj-RbSU5vvsZtpioufqc9yw&s",
         }}
         className="h-10 w-10"
+      
       />
 
       <StyledText className="text-white">

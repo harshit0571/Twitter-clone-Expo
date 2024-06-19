@@ -3,7 +3,7 @@ import React from "react";
 
 const ForYou = () => {
   return (
-    <View>
+    <View className="bg-slate-800 flex-1">
       <Text>ForYOu</Text>
     </View>
   );
