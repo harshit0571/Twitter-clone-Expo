@@ -23,7 +23,7 @@ const AddTask = ({ isVisible, setIsVisible }) => {
 
   return (
     <Modal animationType="slide" transparent={true} visible={isVisible}>
-      <ScrollView className="z-50 bg-black w-screen h-[50%] py-5 absolute bottom-0 p-5 rounded-t-3xl shadow-lg">
+      <ScrollView className="z-50 bg-slate-900 w-screen h-[50%] py-5 absolute bottom-0 p-5 rounded-t-3xl shadow-lg">
         <View className="flex-row justify-between items-center mb-4">
           <Text className="text-lg font-bold text-white">Add Tweet</Text>
           <TouchableOpacity onPress={handleClose}>
@@ -38,7 +38,7 @@ const AddTask = ({ isVisible, setIsVisible }) => {
           multiline={true}
           numberOfLines={4}
           textAlignVertical="top"
-          className="border border-blue-500 rounded-lg w-full p-2 mb-4 text-white h-32"
+          className="border border-gray-500 rounded-lg w-full p-2 mb-4 text-white h-32"
         />
         <TouchableOpacity
           className="flex-row items-center bg-blue-500 p-3 justify-center rounded-full"
