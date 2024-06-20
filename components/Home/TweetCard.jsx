@@ -1,7 +1,8 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 
-const TweetCard = ({ tweet }) => {
+const TweetCard = ({ tweet, username }) => {
+
   return (
     <View
       key={tweet.id}
@@ -10,9 +11,9 @@ const TweetCard = ({ tweet }) => {
       <View className="flex-row items-center justify-between">
         <View className="flex flex-row items-center gap-2">
           <Pressable className="bg-orange-400 px-2 py-1 rounded-full">
-            <Text className="text-white">{tweet.username[0]}</Text>
+            <Text className="text-white">{username ? username[0] :tweet.username[0]}</Text>
           </Pressable>
-          <Text className="text-white text-lg">{tweet.username}</Text>
+          <Text className="text-white text-lg">{username ? username :tweet.username}</Text>
         </View>
 
         <Text className="text-gray-300 text-sm">
